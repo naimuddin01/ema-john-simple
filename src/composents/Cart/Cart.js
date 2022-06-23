@@ -36,12 +36,12 @@ const Cart = (props) => {
     
     return (
         <div>
-            <h5>Order Summary</h5>
+            <h5 className='text-danger text-align-center'>Order Summary</h5>
             <p>Items Order : {cart.length}</p>
             <p>Product Price : {formetNumber(totalPrice)}</p>
             <p><small>Shipping : {formetNumber(shipping)}</small></p>
             <p><small>Tax + Vat : {formetNumber(tax)}</small></p>
-            <p>Total Price : {formetNumber(grandTotal)}</p>
+            <p className='text-primary'>Total Price : {formetNumber(grandTotal)}</p>
         </div>
     );
 };
