@@ -7,7 +7,7 @@ import './Shop.css';
 
 const Shop = () => {
     
-    const first10 = fakeData.slice(0, 10); 
+    const first10 = fakeData.slice(0, 15); 
 
     const [products, setProducts] = useState(first10)
     console.log("Data", first10)
@@ -15,16 +15,36 @@ const Shop = () => {
     const [cart, setcart] = useState([])
 
     const handleAddProduct = (product) =>{
+        const toBeAddedKey = product.key;
+        const sameProduct = cart.find(pd => pd.key === toBeAddedKey);
+        let count = 1;
+        let newCart;
+        if (sameProduct){
+            count = sameProduct.quantity + 1
+            sameProduct.quantity = count
+            const others = cart.filter(pd => pd.key !== toBeAddedKey)
+            newCart = [...others, sameProduct]
+
+        }
+        else{
+
+            product.quantity = 1;
+            newCart = [...cart, product]
+        }
+
         console.log('product add', product)
-        const newCart = [...cart,product]
+
         setcart(newCart);
-        const sameProduct = newCart.filter(pd => pd.key === product.key)
-        const count = sameProduct.length;
+
+        //eountyti kaj er jon
+        // const sameProduct = newCart.filter(pd => pd.key === product.key)
+        // const count = sameProduct.length;
+        
         addToDatabaseCart(product.key, count)
     } 
 
     return (
-        <div className='shop-container'>
+        <div className='twin-container'>
             <h3>{products.length}</h3>
 
             <div className="product-container">
