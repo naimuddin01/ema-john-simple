@@ -11,6 +11,7 @@ import './Shop.css';
 const Shop = () => {
     
     const first10 = fakeData.slice(0, 15); 
+    // console.log(first10);
 
     const [products, setProducts] = useState(first10)
     // console.log("Data", first10)
@@ -19,16 +20,17 @@ const Shop = () => {
 
     useEffect(() => {
         const savedCart = getDatabaseCart();
-        const productsKeys = Object.keys(savedCart)
+        const productsKeys = Object.keys(savedCart)//database thake key gulo nisce
         const previousCart = productsKeys.map(existingKey => {
-            const product = fakeData.find(pd => pd.key === existingKey);
-            product.quantity = savedCart[existingKey]
+            const product = fakeData.find(pd => pd.key === existingKey);//dataBase er key er sathe fateData er product key match kore product nisce
+            // database e key pathasce bole amra valu ta pasce
+            product.quantity = savedCart[existingKey] //database e jokhon amra key pathay tokhon amra value ta pai
             // console.log("getValue "+existingKey, savedCart[existingKey]);
             return product;
         })
 
-        console.log(savedCart)
-        console.log(productsKeys)
+        // console.log(savedCart)
+        // console.log(productsKeys)
         setcart(previousCart)
     },[])
 
@@ -38,14 +40,16 @@ const Shop = () => {
         const toBeAddedKey = product.key;
 
         console.log("handle cart",cart)
-        const sameProduct = cart.find(pd => pd.key === toBeAddedKey);
+        const sameProduct = cart.find(pd => pd.key === toBeAddedKey); //find ekta object return kore
+        console.log("same product",sameProduct)
         
         let count = 1;
         let newCart;
         if (sameProduct){
             count = sameProduct.quantity + 1
             sameProduct.quantity = count
-            const others = cart.filter(pd => pd.key !== toBeAddedKey)
+            const others = cart.filter(pd => pd.key !== toBeAddedKey) //filter ekta array return kore
+            console.log("others",others);
             newCart = [...others, sameProduct]
             console.log("if newCart",newCart)
 
@@ -89,8 +93,9 @@ const Shop = () => {
 
             <div className="cart-container">
                 <Cart cart = {cart}>
-                    <Link to="/review">
-                        <button className='main-button'>Review Button</button>
+                    {/* link er maddome Review.js component e jasse */}
+                    <Link to="/review"> 
+                        <button review ={cart} className='main-button'>Review Button</button>
                     </Link>
                 </Cart>
             </div>
