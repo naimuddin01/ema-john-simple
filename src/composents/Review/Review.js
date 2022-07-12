@@ -4,6 +4,8 @@ import { getDatabaseCart, processOrder, removeFromDatabaseCart } from '../../uti
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import happyImage from '../../images/giphy.gif';
+import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 
 const Review = () => {
 
@@ -14,18 +16,21 @@ const Review = () => {
 
     const [cart, setCart] = useState([]);
     const [orderPlaced, setOrderPlaced] = useState(false);
+    const history = useHistory() //(useHistory) update react version e usenavigate
 
-    const handlePlaceOrder = () => {
-        setCart([]);
-        setOrderPlaced(true)
-        processOrder();
+    const handleProceedCheckOut = () => {
+        // setCart([]);
+        // setOrderPlaced(true)
+        // processOrder();
+
+        history.push('/shipment')//.push ta hobe na update react er jonno
     }
 
     const removeProduct = (productKey) => {
-        // console.log('Remove Clicked', productKey)
+        console.log('Remove Clicked', productKey)
         const newCart = cart.filter(pd => pd.key !== productKey);
         setCart(newCart);   
-        removeFromDatabaseCart("remode product key",productKey);
+        removeFromDatabaseCart(productKey); //database e je product ta remove korbo sei product key ta pathasce
     }
 
     useEffect(() => {
@@ -71,12 +76,12 @@ const Review = () => {
 
             <div className='cart-container'>
                 <Cart cart={cart}>
-                    <button onClick={handlePlaceOrder} className='main-button'>Place Order</button>
+                    <button onClick={handleProceedCheckOut} className='main-button'>Proced Checkout</button>
                 </Cart>
             </div>
             
         </div>
-    );
+    ); 
 };
 
 export default Review;

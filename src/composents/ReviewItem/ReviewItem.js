@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const ReviewItem = (props) => {
-    // console.log("REMOVE Item Props : ", props)
+    console.log("REMOVE Item Props : ", props)
     const {name, quantity, img, key, price} = props.product;
     const ReviewItemStyle = {
         borderBottom: '1px solid lightgrey',

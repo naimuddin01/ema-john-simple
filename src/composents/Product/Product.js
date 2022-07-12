@@ -4,6 +4,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import './Product.css'
 import { Link } from 'react-router-dom';
 
+
 const Product = (props) => {
     // console.log("Product",props)//all product
     // console.log("ProductDetails", props)// clickable procuct
