@@ -90,7 +90,7 @@ Explain how to set up the necessary configuration, especially the .env file.
     DB_User=your-mongoBD-project-userName
     DB_PASS=your-mongoBD-project-PASS
    ```
-3.
+    
 # Add the following environment variables to your .env file:
 SSLCommerz_StoreID = your-store-id
 SSLCommerz_StorePassword = your-store-password
