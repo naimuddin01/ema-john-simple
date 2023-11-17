@@ -1,0 +1,37 @@
+.shop-container {
+    display: grid;
+    grid-template-columns: 4fr 1fr; /*display ta 2 vag hobe ekta 1/5  & r ekta 4/5*/
+}
+
+.products-container{
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);/*repeat ta dei jokhon eki size e vag korte chi */ 
+ gap: 45px; /*potita item er modde mag deyor jonno*/
+ margin: 100px 50px;
+}
+
+.cart-container{
+    background-color: #c4811b;
+}
+
+.pagination{
+    margin: 200px;
+    margin-bottom: 50px;
+}
+.pagination button{
+    margin-right: 10px;
+
+}
+.pagination .selected{
+    background-color: #c4811b;
+    border: gold;
+    font-weight: bold;
+    padding: 8px;
+}
+
+@media screen and (max-width:1100px){
+    .products-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
