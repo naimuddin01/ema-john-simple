@@ -8,7 +8,8 @@ An e-commerce platform developed with node.js and react , providing a smooth sho
 - [Project Installation](#project-installation)
   - [Environment Variable](#configure-the-env-file)
   - [SSL Integration](#ssl-integration)
-  - [Paypal Integration](#paypal-integration)
+  - [Backend and Database](#Set-Up-the-Backend-and-Database)
+  - [Environment Variable_backend](#configure-the-env-file-backend)
 - [Expectation](#expectation)
 - [Future Work](#future-works)
 
