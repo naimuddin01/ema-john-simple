@@ -25,7 +25,7 @@ Welcome to my E-Commerce Platform, a robust and user-friendly online shopping so
 
 3. **Shopping Cart:** Add items to the cart and manage quantities. Easily review and modify your cart's contents.
 
-4. **Secure Checkout:** Integration with PayPal and SSL for secure and trusted payment processing.
+4. **Secure Checkout:** Integration with SSL for secure and trusted payment processing.
 
 5. **Order History:** Completed orders are automatically logged in the user's profile. Easily track past orders and reorder favorite items.
 
