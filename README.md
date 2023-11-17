@@ -91,10 +91,11 @@ Explain how to set up the necessary configuration, especially the .env file.
     DB_PASS=your-mongoBD-project-PASS
    ```
     
-# Add the following environment variables to your .env file:
+3. Add the following environment variables to your .env file for SSL:
+```bash
 SSLCommerz_StoreID = your-store-id
 SSLCommerz_StorePassword = your-store-password
-    
+ ```
 
 ### SSL Integration
 
